@@ -8,7 +8,7 @@ class User {
    * Устанавливает текущего пользователя в
    * локальном хранилище.
    * */
-  static URL = "/user";
+  static URL = "/user/";
 
   static setCurrent(user) {
     localStorage.setItem("user", JSON.stringify(user));
@@ -27,8 +27,8 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    return localStorage.setItem("user")
-      ? JSON.parse(localStorage.setItem("user"))
+    return localStorage.getItem("user")
+      ? JSON.parse(localStorage.getItem("user"))
       : undefined;
   }
 
